@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --primary-color: #ff385c;
+  --secondary-color: #222222;
+  --background-color: #ffffff;
+  --text-color: #222222;
+  --gray-color: #717171;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* 헤더 스타일 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-size: 20px;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links p {
+  color: var(--text-color);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links form {
+  display: flex;
+  align-items: center;
+}
+
+#logout,
+#login {
+  background-color: white;
+  font-size: 20px;
+  color: var(--text-color);
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid var(--gray-color);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#logout:hover,
+#login:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: var(--secondary-color);
+  min-width: 1200px;
+  color: white;
+  padding: 60px 80px;
+  margin-top: auto;
+}
+
+footer > div {
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+}

@@ -1,0 +1,79 @@
+/* 메인 배너 스타일 */
+.main-banner {
+  margin-top: 80px;
+  min-width: 1200px;
+  height: 600px;
+  background-image: url("https://blog.kakaocdn.net/dn/ccoQgA/btskY6Aq9dS/fCkMvDQXKKDnWJ0FCrDcg1/img.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner-content {
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.banner-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 카테고리 섹션 */
+.categories {
+  padding: 60px 80px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.category-grid > a{
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.category-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 460px;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.category-info {
+  padding: 20px;
+}
+
+.category-info h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.category-info p{
+  font-size: 20px;
+}

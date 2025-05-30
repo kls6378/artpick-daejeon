@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/head',{title: 'Artpick - 카페', css: '/cafe.css'}) %>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/nav') %>
+      <div class="container">
+        <h1 class="page-title">대전 카페</h1>
+        <div class="cafe-grid">
+          <% cafes.forEach(cafe => { %>
+          <div class="cafe-card">
+            <img
+              src="/img/<%= cafe.img %>"
+              alt="<%=cafe.title %>"
+              class="cafe-image"
+            />
+            <div class="cafe-info">
+              <h3 class="cafe-name">
+                <%=cafe.title %>
+                <% if(cafe.commentCount>0) { %>
+                  &nbsp;&#x1F4AC;<%=cafe.commentCount %>
+                <% } %>
+              </h3>
+              <p class="cafe-location"><%= cafe.addr%></p>
+              <p class="cafe-description"><%= cafe.summary %></p>
+              <a href="/detail/cafe/<%= cafe.id%>" class="cafe-link"
+                >자세히 보기</a
+              >
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

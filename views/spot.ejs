@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/head',{title: 'Artpick - 명소', css: '/spot.css'}) %>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/nav') %>
+      <div class="container">
+        <h1 class="page-title">대전 명소</h1>
+        <div class="spot-grid">
+          <% spots.forEach(spot => { %>
+          <div class="spot-card">
+            <img
+              src="/img/<%= spot.img %>"
+              alt="<%=spot.title %>"
+              class="spot-image"
+            />
+            <div class="spot-info">
+              <h3 class="spot-name">
+                <%= spot.title %> 
+                <% if(spot.commentCount>0) { %>
+                  &nbsp;&#x1F4AC;<%=spot.commentCount %>
+                <% } %>
+              </h3>
+              <p class="spot-location"><%= spot.addr%></p>
+              <p class="spot-description"><%= spot.summary %></p>
+              <a href="/detail/spot/<%= spot.id%>" class="spot-link">자세히 보기</a>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/head',{title: 'Artpick - 대전 관광 명소, 맛집', css:
+  '/index.css'}) %>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/nav') %>
+
+      <section class="main-banner">
+        <div class="banner-content">
+          <h1>특별한 여행을 위한 시작</h1>
+        </div>
+      </section>
+
+      <section class="categories">
+        <h2 class="section-title">인기 명소</h2>
+        <div class="category-grid">
+          <% spots.forEach(spot => { %>
+          <a href="/detail/spot/<%= spot.id %>">
+            <div class="category-card">
+              <img
+                src="/img/<%= spot.img %>"
+                alt="<%= spot.title %> 이미지"
+                class="category-image"
+              />
+              <div class="category-info">
+                <h3><%= spot.title %></h3>
+                <p><%= spot.summary %></p>
+              </div>
+            </div>
+          </a>
+          <% }) %>
+        </div>
+      </section>
+
+      <section class="categories">
+        <h2 class="section-title">인기 맛집</h2>
+        <div class="category-grid">
+          <% foods.forEach(food => { %>
+          <a href="/detail/food/<%= food.id %>">
+            <div class="category-card">
+              <img
+                src="/img/<%= food.img %>"
+                alt="<%= food.title %> 이미지"
+                class="category-image"
+              />
+              <div class="category-info">
+                <h3><%= food.title %></h3>
+                <p><%= food.summary %></p>
+              </div>
+            </div>
+          </a>
+          <% }) %>
+        </div>
+      </section>
+
+      <section class="categories">
+        <h2 class="section-title">인기 카페</h2>
+        <div class="category-grid">
+          <% cafes.forEach(cafe => { %>
+          <a href="/detail/cafe/<%= cafe.id %>">
+            <div class="category-card">
+              <img
+                src="/img/<%= cafe.img %>"
+                alt="<%= cafe.title %> 이미지"
+                class="category-image"
+              />
+              <div class="category-info">
+                <h3><%= cafe.title %></h3>
+                <p><%= cafe.summary %></p>
+              </div>
+            </div>
+          </a>
+          <% }) %>
+        </div>
+      </section>
+
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

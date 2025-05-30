@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/head',{title: location.title + ' - 상세정보',
+  css:'/detail.css'}) %>
+  <body>
+    <div class="wrapper">
+      <%- include ('partials/nav') %>
+      <div class="container">
+        <h1><%= location.title %></h1>
+        <h3><%= location.addr %></h3>
+        <img
+          src="/img/<%=location.img%>"
+          alt="<%=location.title%>"
+          style="width: 800px; height: 600px"
+        />
+        <div class="detail-section">
+          <h2>상세 설명</h2>
+          <p><%- location.description.replace(/\r\n/g, '<br />') %></p>
+        </div>
+
+        <div class="link-section">
+          <h2>홈페이지 바로가기</h2>
+          <a href="<%= location.link %>" target="_blank" class="button">
+            <%= location.title%> 공식 홈페이지 바로가기</a>
+          </a>
+        </div>
+
+        <div class="comments-section">
+          <h2>댓글 &#x1F4AC;<%=commentCount%></h2>
+          <% if (user) { %>
+          <div class="comment-form">
+            <form action="/detail/<%=location.category%>/<%=location.id%>/create/comment" method="POST">
+              <textarea
+              name="text"
+              class="comment-input"
+              placeholder="댓글을 작성해주세요..."
+              maxlength="500"
+              ></textarea>
+              <button class="comment-submit">댓글 작성</button>
+            </form>
+          </div>
+          <% } else { %>
+            <p class="comment-notice">로그인 후 댓글을 작성해주세요..</p>
+          <% } %>
+          <div class="comment-list">
+            <% comments.forEach(comment=>{%>
+              <div class="comment-item">
+                <div class="comment-header">
+                  <span class="comment-author"><%=comment.username%></span>
+                  <span class="comment-date"><%=comment.commentdate%></span>
+                </div>
+                <div class="comment-content">
+                  <%- comment.text.replace(/\n/g, '<br />') %>
+                </div>
+              </div>
+            <%})%>
+          </div>
+        </div>
+      </div>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

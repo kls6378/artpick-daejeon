@@ -1,0 +1,86 @@
+/* 메인 컨텐츠 스타일 */
+.container {
+  min-width: 1200px;
+  margin: 120px auto 40px;
+  padding: 0 20px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+  font-size: 38px;
+}
+
+/* 장소 목록 스타일 */
+.spot-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.spot-card {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 800px;
+}
+
+.spot-card:hover {
+  transform: translateX(5px);
+}
+
+.spot-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.spot-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.spot-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.spot-location {
+  color: var(--gray-color);
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.spot-description {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.spot-link {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.spot-link:hover {
+  background-color: #e03050;
+}

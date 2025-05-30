@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>데이터 입력 폼</title>
+</head>
+<body>
+  <h1><a href="/">홈으로 돌아가기</a></h1>
+  <h2>테이블 데이터 입력</h2>
+  <form id="dataForm" action="/input/upload" method="post" enctype="multipart/form-data">
+    <label>카테고리 선택:</label><br>
+    <input type="radio" id="category1" name="category" value="명소" required>
+    <label for="category1">명소</label>
+    <input type="radio" id="category2" name="category" value="맛집">
+    <label for="category2">맛집</label>
+    <input type="radio" id="category3" name="category" value="카페">
+    <label for="category3">카페</label><br><br>
+
+    <label for="title">장소 이름름 (최대 20자):</label><br>
+    <input type="text" id="title" name="title" required maxlength="20"><br><br>
+
+    <label for="description">장소 설명 (최대 1000자):</label><br>
+    <textarea id="description" name="description" rows="5" cols="50" maxlength="1000" required></textarea><br><br>
+
+    <label for="img">이미지지 업로드:</label><br>
+    <input type="file" id="img" name="img" accept="image/*" required><br><br>
+
+    <label for="addr">장소의의 주소 (최대 50자):</label><br>
+    <input type="text" id="addr" name="addr" maxlength="50" required><br><br>
+
+    <label for="summary">장소에 대한한 간단한 설명 (최대 100자):</label><br>
+    <input type="text" id="summary" name="summary" maxlength="100" required><br><br>
+
+    <label for="link">공식 홈페이지 링크 (최대 100자):</label><br>
+    <input type="text" id="link" name="link" maxlength="100"><br><br>
+
+    <button type="submit">제출</button>
+  </form>
+
+  <script>
+    // IMG 업로드 시 파일명을 TITLE로 변경
+    document.getElementById('dataForm').addEventListener('submit', function (e) {
+      const title = document.getElementById('title').value.trim();
+      const imgInput = document.getElementById('img');
+
+      if (imgInput.files.length > 0 && title !== '') {
+        const file = imgInput.files[0];
+        const extension = file.name.split('.').pop();
+        const newFileName = `${title}.${extension}`;
+        const newFile = new File([file], newFileName, { type: file.type });
+
+        // FormData로 새 파일 넣기
+        const formData = new FormData(this);
+        formData.set('img', newFile);
+
+        // 서버로 직접 전송
+        e.preventDefault();
+        fetch(this.action, {
+          method: 'POST',
+          body: formData
+        }).then(response => {
+          if (response.ok) {
+            alert('업로드 성공');
+            this.reset();
+          } else {
+            alert('업로드 실패');
+          }
+        }).catch(err => {
+          console.error(err);
+          alert('에러 발생');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

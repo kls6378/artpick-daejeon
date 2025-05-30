@@ -1,0 +1,54 @@
+# Node.js & npm/yarn
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# package-lock.json # yarn.lock을 사용한다면 이것을, npm을 사용한다면 yarn.lock을 추가하세요. (둘 중 하나만 사용 권장, 현재는 package-lock.json을 사용 중이므로 yarn.lock을 추가)
+yarn.lock 
+# package-lock.json을 사용하고 있으므로 yarn.lock은 무시 (만약 있다면)
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Operating System generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Large binaries / Vendor libraries
+# Oracle Instant Client (압축 파일 및 압축 해제된 폴더)
+instantclient-basic-linux.x64-19.27.0.0.0dbru.zip
+instantclient_*/ 
+# 만약 압축을 풀어 'instantclient_버전' 형태의 폴더가 생긴다면 해당 패턴 추가
+
+# Build Output (만약 있다면)
+# dist/
+# build/
+# out/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Other
+.eslintcache
+# .prettiercache

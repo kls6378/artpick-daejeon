@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/head',{title: 'Artpick - 맛집', css: '/food.css'}) %>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/nav') %>
+      <div class="container">
+        <h1 class="page-title">대전 맛집</h1>
+        <div class="food-grid">
+          <% foods.forEach(food => { %>
+          <div class="food-card">
+            <img
+              src="/img/<%= food.img %>"
+              alt="<%=food.title %>"
+              class="food-image"
+            />
+            <div class="food-info">
+              <h3 class="food-name">
+                <%=food.title %>
+                <% if(food.commentCount>0) { %>
+                  &nbsp;&#x1F4AC;<%=food.commentCount %>
+                <% } %>
+              </h3>
+              <p class="food-location"><%= food.addr%></p>
+              <p class="food-description"><%= food.summary %></p>
+              <a href="/detail/food/<%= food.id%>" class="food-link"
+                >자세히 보기</a
+              >
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <%- include('partials/head',{title: 'Artpick - 회원가입',
+    css:'/register.css'}) %>
+    <script src="script/register.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/nav') %>
+      <div class="signup-container">
+        <div class="signup-box">
+          <h2>회원가입</h2>
+          <% if (typeof errmsg !== 'undefined' && errmsg) { %>
+          <p style="color: red"><%= errmsg %></p>
+          <% } %>
+          <form action="/register" method="POST">
+            <input
+              type="text"
+              placeholder="아이디"
+              name="userId"
+              maxlength="20"
+              required
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호"
+              name="password"
+              maxlength="20"
+              required
+            />
+            <input
+              type="password"
+              id="confirm-password"
+              placeholder="비밀번호 확인"
+              maxlength="20"
+              required
+            />
+            <p id="password-error" class="error-text" style="display: none">
+              비밀번호가 일치하지 않습니다.
+            </p>
+            <input
+              type="text"
+              placeholder="닉네임"
+              name="username"
+              maxlength="10"
+              required
+            />
+            <button>회원가입</button>
+          </form>
+        </div>
+      </div>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

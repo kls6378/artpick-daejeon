@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/head',{title: 'Artpick - 로그인', css: '/login.css'}) %>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/nav') %>
+      <div class="login-container">
+        <div class="login-box">
+          <h2>로그인</h2>
+          <% if (typeof errmsg !== 'undefined' && errmsg) { %>
+          <p style="color: red"><%= errmsg %></p>
+          <% } %>
+          <form action="/login" method="post">
+            <input type="text" placeholder="아이디" name="userId" required/>
+            <input type="password" placeholder="비밀번호" name="password" required/>
+            <button>로그인</button>
+          </form>
+          <div class="signup-text">
+            아직 회원이 아니신가요? <a href="/register">회원가입</a>
+          </div>
+        </div>
+      </div>
+
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

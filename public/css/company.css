@@ -1,0 +1,157 @@
+/* 메인 컨텐츠 스타일 */
+.container {
+  width: 100%;
+  min-width: 1200px;
+  margin: 120px 0 40px 0;
+  padding: 0;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--primary-color);
+  font-size: 38px;
+}
+
+/* 회사 소개 섹션 */
+.company-section {
+  background: white;
+  border-radius: 0;
+  padding: 40px 0 40px 0;
+  margin-bottom: 40px;
+  box-shadow: none;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.company-section p{
+  font-size: 20px;
+}
+
+.company-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.company-section div{
+  font-size: 20px;
+}
+
+.info-card {
+  background: #f8f9fa;
+  padding: 32px 0;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.info-card p {
+  color: var(--gray-color);
+  font-size: 20px;
+}
+
+/* 대표 인사말 섹션 */
+.ceo-section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ceo-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 10%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ceo-image:hover {
+  transform: scale(1.05);
+}
+
+.ceo-message {
+  flex: 1;
+}
+
+.ceo-message h2 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.ceo-message p {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.ceo-signature {
+  margin-top: 30px;
+  text-align: right;
+  font-style: italic;
+}
+
+/* 미션 & 비전 섹션 */
+.mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.mission-box,
+.vision-box {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.mission-box:hover,
+.vision-box:hover {
+  transform: translateY(-5px);
+}
+
+.mission-box h2,
+.vision-box h2 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mission-box p{
+  font-size: 20px;
+}
+
+.vision-box ul{
+  font-size: 20px;
+}
