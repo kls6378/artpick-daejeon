@@ -116,3 +116,11 @@ footer > div {
   font-size: 14px;
   color: #bbb;
 }
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}

@@ -231,6 +231,10 @@ app.get("/cafe", async (req, res) => {
   res.render("cafe", { cafes });
 });
 
+app.get("/toon", (req,res)=>{
+  res.render("toon");
+})
+
 app.get("/detail/:category/:id", async (req, res) => {
   const connection = await db.getConnection(dbConfig);
   const sql1 = `SELECT id, title, description, img, addr, link FROM ${req.params.category} WHERE id = :id`;
